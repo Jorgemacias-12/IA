@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Ejemplo de uso Inteligencia Artificial</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://unpkg.com/brain.js"></script>
 </head>
+
 <body>
-    
+    <div class="container header">
+        <h1 class="title">
+            Probando Inteligencia Artificial en el navegador
+        </h1>
+    </div>
+    <div class="container flex">
+        <div class="container info">
+            <h2 class="title">
+                Probando inteligencia artificial (IA) para decidir el color de fuente en un div con un color de fondo
+                dado.
+            </h2>
+        </div>
+        <div class="content">
+            <label for="" class="label">Color:</label>
+            <input data-jscolor="" class="input" id="color-picker">
+        </div>
+        <div class="element-container">
+            <div id="colorElement">
+                Texto de prueba
+            </div>
+        </div>
+    </div>
+    <script src="jscolor.js"></script>
+    <script src="network.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
