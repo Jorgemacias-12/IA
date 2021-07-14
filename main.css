@@ -1,7 +1,100 @@
+:root {
+    --bg-gray: hsl(0, 0%, 97%);
+    --bg-gray-dark: hsl(0, 0%, 95%);
+    --sucess: hsl(131, 62%, 67%);
+    --border-sucess: hsl(132, 49%, 53%);
+    --border-gray: hsl(0, 0%, 87%);
+    --border-blue: hsl(220, 63%, 57%);
+}
+
 * {
     margin: 0;
     padding: 0;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+}
+
+.header {
+    background-color: #5606FF;
+    height: 60px;
+}
+
+.header .title {
+    color: white;
+}
+
+.flex {
+    display: flex;
+    flex-flow: column;
+    justify-content: unset;
+    align-items: center;
+}
+
+.info {
+    height: 10%;
+    width: 50%;
+    padding: 10px;
+    text-align: justify;
+    font-size: 1em;
+    background-color: var(--sucess);
+    border: 1px solid var(--border-sucess);
+    margin: 20px;
+}
+
+.info .title {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 10%;
+    background-color: var(--bg-gray);
+    border: 1px solid var(--border-gray);
+}
+
+.content .label {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.content .input {
+    height: 35px;
+    border: 1px solid var(--border-blue);
+}
+
+.element-container {
+    display: flex;
+    width: 100%;
+    justify-content: center; 
+    align-items: center;
+    height: 80%;
+}
+
+#colorElement {
+    border: 2px solid var(--border-gray);
+    padding: 20px;
+    width: 512px;
+    height: 512px;
+    line-height: 512px;
+    text-align: center;
+    border-radius: 100%;
+    font-size: 30px;
+    
 }
