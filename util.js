@@ -33,6 +33,7 @@ function changeTab(e) {
         element.classList.add('active');
         loadHTML(tab1_content, wrapper);
         JSColorinstance = new JSColor(document.getElementById('color-picker'), {})
+        document.getElementById('color-picker').addEventListener('input', (e) => { ColorInput(e.target) });
     }
     if (e.target.id === 'tab-2') {
         element.classList.add('active');
