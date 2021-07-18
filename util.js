@@ -1,5 +1,6 @@
 const wrapper = document.getElementById('wrapper');
 const testElement = document.getElementById('colorElement');
+const checkbox = document.getElementById('checkbox');
 
 
 let JSColorinstance;
@@ -8,37 +9,41 @@ const tab1_content =
     `<label for="" class="label">Color: </label>
      <input data-jscolor="" class="input jscolor" id="color-picker">
     `;
-const tab2_content = ``;
+const tab2_content =
+    `<div class="about">
+    <h1 class="about-title">
+        ¡Hola! bienvenido a la pagina.
+    </h1>
+
+    <p class="about-p">
+        Esta página nace de mi primera interacción con la inteligencia artificial usando javacsript del lado del ciente.
+    </p>
+
+    <p class="about-p">
+        El problema que trato de solucionar es la opacidad del texto de un contenedor con un color de fondo dado
+        por el usuario. A lo cual la red neuronal debe de poder reconocer el color de fondo y cambiar el color de texto
+        entre blanco y negro.
+    </p>
+
+    <p class="about-p">
+        He utilizado las siguientes liberias para hacer posible el sitio web:
+    </p>
+
+    <ul class="about-list">
+        <li class="about-li"><a href="https://brain.js.org/#/" class="about-a">Libreria Brain JS</a></li>
+        <li class="about-li"><a href="https://jscolor.com/" class="about-a">Libreria JSColor</a></li>
+    </ul>
+    
+    <p class="about-p">
+        Además de tomar la idea del siguiente creador de contenido: <a class="about-p" href="https://www.youtube.com/watch?v=UNFFLJPW7KQ" target="_blank">video</a>
+    </p>
+
+</div>`;
 
 function convertToRGBArray(input) {
     let inner = input.replace('rgb(', '');
     let newValue = inner.replace(')', '').split(",");
     return newValue;
-}
-
-
-function loadHTML(htmlString, elementWrapper) {
-    elementWrapper.innerHTML = htmlString;
-}
-
-function changeTab(e) {
-    let element = e.target;
-    let buttons = document.getElementsByClassName('button');
-    for (let i = 0; i < buttons.length; i++) {
-        if (buttons[i].classList.contains('active')) {
-            buttons[i].classList.remove('active');
-        }
-    }
-    if (e.target.id === 'tab-1') {
-        element.classList.add('active');
-        loadHTML(tab1_content, wrapper);
-        JSColorinstance = new JSColor(document.getElementById('color-picker'), {})
-        document.getElementById('color-picker').addEventListener('input', (e) => { ColorInput(e.target) });
-    }
-    if (e.target.id === 'tab-2') {
-        element.classList.add('active');
-        loadHTML(tab2_content, wrapper);
-    }
 }
 
 function hexToRgb(hex) {
