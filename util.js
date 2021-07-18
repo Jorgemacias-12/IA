@@ -2,12 +2,15 @@ const wrapper = document.getElementById('wrapper');
 const testElement = document.getElementById('colorElement');
 const checkbox = document.getElementById('checkbox');
 
+const inputColorPicker = document.getElementById('color-picker');
+
+let isDarkModeEnabled = false;
 
 let JSColorinstance;
 
 const tab1_content =
     `<label for="" class="label">Color: </label>
-     <input data-jscolor="" class="input jscolor" id="color-picker">
+     <input class="input" id="color-picker">
     `;
 const tab2_content =
     `<div class="about">
@@ -35,10 +38,52 @@ const tab2_content =
     </ul>
     
     <p class="about-p">
-        Además de tomar la idea del siguiente creador de contenido: <a class="about-p" href="https://www.youtube.com/watch?v=UNFFLJPW7KQ" target="_blank">video</a>
+        Además de tomar la idea del siguiente creador de contenido: <a class="link" href="https://www.youtube.com/watch?v=UNFFLJPW7KQ" target="_blank">video</a>
     </p>
 
 </div>`;
+
+function inserHTMLContent(parent, content) {
+    parent.innerHTML = content;
+}
+
+function changeTab(event) {
+    // Get the current pressed tab
+    let tabTarget = event.target;
+    // Get all buttons aviable with contains class button
+    let buttons = document.getElementsByClassName('button');
+
+    for (let counter = 0; counter < buttons.length; counter++) {
+
+        //Reset all classes currently added
+
+        buttons[counter].classList = 'button';
+
+        if (isDarkModeEnabled) {
+            buttons[counter].classList.remove('button-dark-active');
+            tabTarget.classList.add('button-dark-active');
+        }
+
+        if (!isDarkModeEnabled) {
+            buttons[counter].classList.remove('active');
+            tabTarget.classList.add('active');
+        }
+        
+    }
+
+    if (tabTarget.id === 'tab-1') {
+        // Call to function to insert HTML content
+        inserHTMLContent(wrapper, tab1_content);
+        wrapper.classList.remove('wrapper-400');
+    }
+    
+    if (tabTarget.id === 'tab-2') {
+        // Call to function to insert HTML content
+        wrapper.classList.add('wrapper-400');
+        inserHTMLContent(wrapper, tab2_content);
+    }
+
+}
 
 function convertToRGBArray(input) {
     let inner = input.replace('rgb(', '');
