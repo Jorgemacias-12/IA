@@ -41,6 +41,41 @@ const tab2_content =
 
 </div>`;
 
+function enableDarkMode(enabled) {
+    isDarkModeEnabled = enabled;
+    console.log(`value recivied => ${enabled}`)
+    console.log(`value sended => ${isDarkModeEnabled}`)
+    let containers = document.getElementsByTagName('div');
+    let buttons = document.getElementsByClassName('button');
+    let icon = document.getElementById('theme-indicator');
+    // Icon change due to the theme indicator
+    if (enabled) { icon.classList.add('fa-sun'); icon.classList.remove('fa-moon'); }
+    if (!enabled) { icon.classList.add('fa-moon'); icon.classList.remove('fa-sun'); }
+    // Loop wich iterates through all divs in the page
+    for (let counter = 0; counter < containers.length; counter++) {
+        if (enabled && containers[counter].classList.contains('theme')) {
+            containers[counter].classList.add('dark-bg');
+        }
+        if (!enabled && containers[counter].classList.contains('theme')) {
+            containers[counter].classList.remove('dark-bg');
+        }
+        if (enabled && containers[counter].classList.contains('theme-inner')) {
+            containers[counter].classList.add('dark-min-bg');
+        }
+        if (!enabled && containers[counter].classList.contains('theme-inner')) {
+            containers[counter].classList.remove('dark-min-bg');
+        }
+    }
+    for (counter = 0; counter < buttons.length; counter++) {
+        if (enabled) {
+            
+        }
+        if (!enabled) {
+            
+        }
+    }
+}
+
 const installColorPicker = () => {
     jscolor.install();
     document.getElementById('color-picker').addEventListener('input', (e) => {
@@ -66,10 +101,12 @@ function changeTab(event) {
 
         if (isDarkModeEnabled) {
             buttons[counter].classList.remove('button-dark-active');
+            buttons[counter].classList.add('dark-min-bg');
             tabTarget.classList.add('button-dark-active');
         }
 
         if (!isDarkModeEnabled) {
+            buttons[counter].classList.remove('dark-min-bg');
             buttons[counter].classList.remove('active');
             tabTarget.classList.add('active');
         }
