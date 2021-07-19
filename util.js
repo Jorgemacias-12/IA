@@ -9,8 +9,8 @@ let isDarkModeEnabled = false;
 let JSColorinstance;
 
 const tab1_content =
-    `<label for="" class="label">Color: </label>
-     <input class="input" id="color-picker">
+    `<label for="color-picker" class="label">Color: </label>
+     <input id="color-picker" class="input jscolor" data-jscolor="">
     `;
 const tab2_content =
     `<div class="about">
@@ -50,7 +50,7 @@ function inserHTMLContent(parent, content) {
 function changeTab(event) {
     // Get the current pressed tab
     let tabTarget = event.target;
-    // Get all buttons aviable with contains class button
+    // Get all buttons available that contains the class button
     let buttons = document.getElementsByClassName('button');
 
     for (let counter = 0; counter < buttons.length; counter++) {
@@ -68,15 +68,16 @@ function changeTab(event) {
             buttons[counter].classList.remove('active');
             tabTarget.classList.add('active');
         }
-        
+
     }
 
     if (tabTarget.id === 'tab-1') {
         // Call to function to insert HTML content
         inserHTMLContent(wrapper, tab1_content);
+        jscolor.install();
         wrapper.classList.remove('wrapper-400');
     }
-    
+
     if (tabTarget.id === 'tab-2') {
         // Call to function to insert HTML content
         wrapper.classList.add('wrapper-400');
