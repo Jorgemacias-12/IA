@@ -43,8 +43,6 @@ const tab2_content =
 
 function enableDarkMode(enabled) {
     isDarkModeEnabled = enabled;
-    console.log(`value recivied => ${enabled}`)
-    console.log(`value sended => ${isDarkModeEnabled}`)
     let containers = document.getElementsByTagName('div');
     let buttons = document.getElementsByClassName('button');
     let icon = document.getElementById('theme-indicator');
