@@ -114,7 +114,7 @@ body {
 .button-list .active {
     border-bottom: 4px solid var(--border-blue);
     background-color: #fff;
-    transition: 0.5s border;
+    transition: 0.2s border;
 }
 
 .wrapper {
@@ -222,11 +222,10 @@ body {
 }
 
 .link {
-    color: black;
+    color: var(--border-blue);
     text-decoration: none;
 }
 
 .link:hover {
-    color: var(--border-blue);
     text-decoration: underline;
 }
