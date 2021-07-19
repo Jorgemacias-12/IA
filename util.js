@@ -2,8 +2,6 @@ const wrapper = document.getElementById('wrapper');
 const testElement = document.getElementById('colorElement');
 const checkbox = document.getElementById('checkbox');
 
-const inputColorPicker = document.getElementById('color-picker');
-
 let isDarkModeEnabled = false;
 
 let JSColorinstance;
@@ -45,7 +43,10 @@ const tab2_content =
 
 const installColorPicker = () => {
     jscolor.install();
-    inputColorPicker.addEventListener('input', (e) => {ColorInput(e.target)}); 
+    document.getElementById('color-picker').addEventListener('input', (e) => {
+        console.log('Running => OK!');
+        ColorInput(e.target);
+    });
 }
 
 function inserHTMLContent(parent, content) {
