@@ -44,7 +44,6 @@ const tab2_content =
 const installColorPicker = () => {
     jscolor.install();
     document.getElementById('color-picker').addEventListener('input', (e) => {
-        console.log('Running => OK!');
         ColorInput(e.target);
     });
 }
