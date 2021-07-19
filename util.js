@@ -68,10 +68,21 @@ function enableDarkMode(enabled) {
     }
     for (counter = 0; counter < buttons.length; counter++) {
         if (enabled) {
-            
+            buttons[counter].classList.add('dark-min-bg');
+            buttons[counter].classList.add('button-dark');
+            if (buttons[counter].classList.contains('active')) {
+                buttons[counter].classList.remove('active');
+                buttons[counter].classList.add('button-dark-active');
+            }
         }
         if (!enabled) {
-            
+            buttons[counter].classList.remove('dark-min-bg');
+            buttons[counter].classList.remove('button-dark');
+            if (buttons[counter].classList.contains('button-dark-active')) {
+                buttons[counter].classList.remove('button-dark-active');
+                buttons[counter].classList.add('active');
+            }
+
         }
     }
 }
