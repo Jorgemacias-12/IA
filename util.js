@@ -43,6 +43,11 @@ const tab2_content =
 
 </div>`;
 
+const installColorPicker = () => {
+    jscolor.install();
+    inputColorPicker.addEventListener('input', (e) => {ColorInput(e.target)}); 
+}
+
 function inserHTMLContent(parent, content) {
     parent.innerHTML = content;
 }
@@ -74,7 +79,7 @@ function changeTab(event) {
     if (tabTarget.id === 'tab-1') {
         // Call to function to insert HTML content
         inserHTMLContent(wrapper, tab1_content);
-        jscolor.install();
+        installColorPicker();
         wrapper.classList.remove('wrapper-400');
     }
 
