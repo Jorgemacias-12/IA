@@ -110,6 +110,7 @@ function changeTab(event) {
 
         if (isDarkModeEnabled) {
             buttons[counter].classList.remove('button-dark-active');
+            buttons[counter].classList.add('button-dark');
             buttons[counter].classList.add('dark-min-bg');
             tabTarget.classList.add('button-dark-active');
         }
