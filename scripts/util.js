@@ -31,8 +31,8 @@ const tab2_content =
     </p>
 
     <ul class="about-list">
-        <li class="about-li"><a href="https://brain.js.org/#/" class="about-a">Libreria Brain JS</a></li>
-        <li class="about-li"><a href="https://jscolor.com/" class="about-a">Libreria JSColor</a></li>
+        <li class="about-li"><a href="https://brain.js.org/#/" target="_blank" class="about-a">Libreria Brain JS</a></li>
+        <li class="about-li"><a href="https://jscolor.com/" target="_blank" class="about-a">Libreria JSColor</a></li>
     </ul>
     
     <p class="about-p">
