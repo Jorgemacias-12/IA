@@ -117,6 +117,24 @@ body {
     transition: 0.2s border;
 }
 
+.btn-border {
+    border: 1px solid var(--border-gray);
+}
+
+.button-list .button-dark {
+    color: white;
+    background-color: var(--button-dark-bg);
+    border-right: 1px solid var(--button-dark-border);
+}
+
+.button-list .button-dark-active {
+    background-color: var(--button-dark-ac);
+    border-right: 1px solid var(--button-dark-border);
+    border-bottom: 4px solid var(--button-dark-selected);
+    transition: 0.2s border;
+    color: var(--white-text);
+}
+
 .wrapper {
     max-height: 400px;
     height: 60px;
@@ -201,20 +219,6 @@ body {
     background-color: #404040;
     border: 1px solid #505050;
     color: white;
-}
-
-.button-list .button-dark {
-    color: white;
-    background-color: var(--button-dark-bg);
-    border-right: 1px solid var(--button-dark-border);
-}
-
-.button-list .button-dark-active {
-    background-color: var(--button-dark-ac);
-    border-right: 1px solid var(--button-dark-border);
-    border-bottom: 4px solid var(--button-dark-selected);
-    transition: 0.2s border;
-    color: var(--white-text);
 }
 
 .chb {
