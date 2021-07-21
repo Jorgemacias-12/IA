@@ -4,6 +4,9 @@
 }
 
 @media screen and (min-width: 100px) and (max-width: 1500px) {
+    #body {
+        overflow-y: scroll;
+    }
     .button-list {
         width: 60%;
     }
@@ -14,6 +17,9 @@
         width: 350px;
         height: 350px;
         line-height: 350px;
+    }
+    .element-container {
+        margin-top: 20px;
     }
 }
 
