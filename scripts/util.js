@@ -4,8 +4,6 @@ const checkbox = document.getElementById('checkbox');
 
 let isDarkModeEnabled = false;
 
-let JSColorinstance;
-
 const tab1_content =
     `<label for="color-picker" class="label">Color: </label>
      <input id="color-picker" class="input jscolor" data-jscolor="">
