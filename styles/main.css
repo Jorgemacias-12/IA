@@ -117,10 +117,6 @@ body {
     transition: 0.2s border;
 }
 
-.btn-border {
-    border: 1px solid var(--border-gray);
-}
-
 .button-list .button-dark {
     color: white;
     background-color: var(--button-dark-bg);
@@ -223,8 +219,13 @@ body {
 
 .chb {
     display: flex;
-    justify-content: center;
+}
+
+.theme-indicator {
+    display: flex;
+    justify-content: center; 
     align-items: center;
+    width: 100%;
 }
 
 .link {
