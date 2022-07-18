@@ -10,41 +10,41 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/responsive.css">
     <script src="https://kit.fontawesome.com/7f4f5e3479.js" defer crossorigin="anonymous"></script>
-    <script defer src="scripts/brain.js"></script>
-    <script defer src="scripts/jscolor.js"></script>
-    <script defer src="scripts/network.js"></script>
-    <script defer src="scripts/util.js"></script>
-    <script defer src="scripts/app.js"></script>
+    <script defer type="module" src="scripts/brain.js"></script>
+    <script defer type="module" src="scripts/jscolor.js"></script>
+    <script defer type="module" src="scripts/network.js"></script>
+    <script defer type="module" src="scripts/util.js"></script>
+    <script defer type="module" src="scripts/app.js"></script>
 </head>
 
-<body>
+<body class="light">
 
-    <header class="header container">
-        <h1 class="title">IA - Prueba</h1>
+    <header class="header">
+        <h1 class="title">Probando IA con JS</h1>
     </header>
 
-    <main class="container flex theme" id="body">
+    <main class="content">
 
-        <section class="content button-list theme-inner">
+        <section class="tabs">
 
-            <button class="button active" id="tab-1">
+            <button type="button" class="button active" id="tab-1">
                 Elegir color
             </button>
 
-            <button class="button" id="tab-2">
+            <button type="button" class="button" id="tab-2">
                 Acerca de
             </button>
 
-            <section class="button chb">
-                <i class="fas fa-moon" id="theme-indicator"></i>
+            <section class="theme-switcher">
+                <input type="checkbox" name="theme-indicator" id="theme-indicator" class="checkbox fas fa-moon">
             </section>
 
         </section>
 
-        <section class="content wrapper theme-inner" id="wrapper">
+        <section id="wrapper">
 
-            <label for="" class="label">Color:</label>
-            <input type="text" data-jscolor="" class="input" id="color-picker">
+            <label for="color-picker" class="label">Color</label>
+            <input type="text" data-jscolor="" class="input" id="color-picker" oninput="updateColor();">
 
         </section>
 
@@ -52,7 +52,7 @@
 
     <section class="preview-color">
 
-        <div id="colorElement">Texto de prueba</div>
+        <div id="previewColor" class="preview appear">Texto de prueba</div>
 
     </section>
 
