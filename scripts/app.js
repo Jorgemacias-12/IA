@@ -1,18 +1,12 @@
-const colorPicker = document.getElementById("color-picker");
-const colorBox = document.getElementById("colorElement");
+// DOMContent loaded event
 
-window.onload = () => {
-    document.getElementById("tab-1").addEventListener("click", (e) => {
-        changeTab(e);
-    }),
-    document.getElementById("tab-2").addEventListener("click", (e) => {
-        changeTab(e);
-    }),
-    colorPicker.addEventListener("input", (e) => {
-        ColorInput(e.target);
-    }),
-    enableDarkMode(document.getElementById("checkbox").checked),
-    document.getElementById("checkbox").addEventListener("click", (e) => {
-        enableDarkMode(e.target.checked);
-    });
-};
+function App() {
+    // Inicializar el comportamiento de las pestañas 
+    loadTabs();
+    // Inicializar tema de la página
+    initTheme();
+    // Aplicar tema almacenado
+    applyTheme();
+}
+
+document.addEventListener('DOMContentLoaded', App);
