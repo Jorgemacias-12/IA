@@ -26,7 +26,7 @@ function updateColor() {
 
     color = convertToRGBArray(color);
     
-    font_color = update(color);
+    font_color = networkUpdateColor(color);
 
     font_color = font_color > 0.5 ? "white" : "black";
 

@@ -16,4 +16,4 @@ network.train([
 
 // Exportaciones
 
-window.update = update;
+window.networkUpdateColor = update;
