@@ -110,28 +110,24 @@ function initTheme() {
 
     let checkbox = $('theme-indicator');
 
-    let isThemeChanged;
+    let isThemeChange;
 
-    let icon;
-
-    let theme = "light";
+    let chbClass;
+    let theme;
 
     checkbox.addEventListener('change', () => {
 
-        isThemeChanged = false;
+        isThemeChange = checkbox.checked;
 
-        isThemeChanged = checkbox.checked;
+        chbClass = isThemeChange ? "checkbox fas fa-sun" : "checkbox fas fa-moon";
 
-        icon = isThemeChanged ? "checkbox fas fa-sun" : "checkbox fas fa-moon";
+        checkbox.classList = chbClass;
 
-        checkbox.classList = icon;
-
-        theme = isThemeChanged ? "dark" : "light";
+        theme = isThemeChange ? "dark" : "light";
 
         document.body.classList = theme;
-        
+
         localStorage.setItem('theme', theme);
-        localStorage.setItem('state', isThemeChanged);
 
     });
 
@@ -139,22 +135,23 @@ function initTheme() {
 
 function applyTheme() {
 
-    if (localStorage.length == 0) return;
-
-    let isThemeChanged;
+    let checkbox;
     let theme;
-    let icon;
-    
-    let checkboxRef;
+    let isActive;
+    let chbClass;
 
-    checkboxRef = $('theme-indicator');
+    checkbox = $('theme-indicator');
 
-    isThemeChanged = localStorage.getItem('state');
+    if (localStorage.length == 0) theme = light;
+
     theme = localStorage.getItem('theme');
     
-    icon = isThemeChanged ? "checkbox fas fa-sun" : "checkbox fas fa-moon";
+    isActive = theme === "dark" ? true : false;
 
-    checkboxRef.classList = icon;
+    chbClass = isActive ? "checkbox fas fa-sun" : "checkbox fas fa-moon";
+    
+    checkbox.checked = isActive;
+    checkbox.classList = chbClass;
 
     document.body.classList = theme;
 
