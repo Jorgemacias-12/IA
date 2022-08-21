@@ -1,15 +1,1 @@
-@media screen and (max-width: 800px) {
-    .tabs {
-        width: 100%;
-    }
-
-    #wrapper {
-        width: 100%;
-    }
-
-    #previewColor {
-        width: 20rem;
-        height: 20rem;
-    }
-
-}
+@charset "utf-8";@media screen and (max-width:800px){.tabs{width:100%}#wrapper{width:100%}#previewColor{width:20rem;height:20rem}}
